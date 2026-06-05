@@ -92,6 +92,12 @@
 
 ## 🚀 快速开始
 
+### 0. 了解 vault（**第一次必读**）
+
+LLMwiki 操作的是你的 **Obsidian vault 目录**（一个普通文件夹）。
+路径 / 目录约定 / 写权限 / 中文路径 / 服务器同步 / OneDrive 坑，
+**5 分钟看** [`docs/knowledge-base.md`](docs/knowledge-base.md) 全部说清楚。
+
 ### 1. 准备 vault（第一次）
 
 需要一个 Obsidian vault，建议结构：
@@ -109,6 +115,9 @@
 ├── concepts/              # 概念页（与 wiki/concepts 二选一）
 └── .claude/skills/        # 可选，skill 文件
 ```
+
+> **空 vault 起步 / 中文路径 / 同步到服务器 / OneDrive 坑**
+> 全部在 [`docs/knowledge-base.md`](docs/knowledge-base.md) §5 / §7 / §9。
 
 ### 2. 后端
 
@@ -283,6 +292,7 @@ ssh user@server "sudo cp deploy/systemd/llmwiki-backend.service /etc/systemd/sys
 
 | 文件 | 用途 |
 |------|------|
+| [`docs/knowledge-base.md`](docs/knowledge-base.md) | **vault 路径 / 目录约定 / 同步 / 排错（必读）** |
 | [`docs/architecture.md`](docs/architecture.md) | 架构图 + 设计决策 + 风险表 |
 | [`docs/deployment.md`](docs/deployment.md) | 部署 + 升级 + 监控 + 故障排查 |
 | [`docs/api.md`](docs/api.md) | 12 endpoint 完整契约 |
