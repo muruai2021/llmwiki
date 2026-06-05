@@ -32,6 +32,8 @@ frontend/dist/
 frontend/.vite/
 # Stale transpiled vite config (kept locally as a sanity check, do not commit).
 frontend/vite.config.js
+# TypeScript incremental build cache
+*.tsbuildinfo
 
 # ----- IDEs / Editors -----
 .vscode/
