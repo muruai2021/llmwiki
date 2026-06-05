@@ -1,0 +1,33 @@
+[Unit]
+Description=LLMwiki backend (FastAPI)
+After=network.target
+
+[Service]
+Type=simple
+# Adjust user / paths to your environment
+User=www
+Group=www
+WorkingDirectory=/www/wwwroot/llmwiki/backend
+Environment="PATH=/www/wwwroot/llmwiki/backend/.venv/bin"
+Environment="PYTHONIOENCODING=utf-8"
+Environment="PYTHONUNBUFFERED=1"
+# Load .env from the backend dir
+EnvironmentFile=/www/wwwroot/llmwiki/backend/.env
+
+ExecStart=/www/wwwroot/llmwiki/backend/.venv/bin/uvicorn app.main:app \
+  --host 127.0.0.1 \
+  --port 8000 \
+  --workers 1 \
+  --no-access-log
+
+Restart=always
+RestartSec=5
+StandardOutput=append:/var/log/llmwiki/backend.log
+StandardError=append:/var/log/llmwiki/backend.err
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+
+[Install]
+WantedBy=multi-user.target
